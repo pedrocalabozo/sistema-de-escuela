@@ -15,8 +15,12 @@ class AlumnomasrController extends Controller
     {
       
         $datos['alumnos']=Alumnomasr::paginate(10);
-        $alumno=Estadoalumno::findOrfail(1);
-        $datos['activo']=Alumnomasr::find($alumno['Idalumno']);
+       
+        if (  $alumno=Estadoalumno::findOrfail(1)) {
+            $datos['activo']=Alumnomasr::find($alumno['Idalumno']);
+        }
+      
+       
      
       //dd($datos);
         return view('Admin.alumnos.index',$datos);
@@ -126,8 +130,12 @@ $campos=[
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alumnomasr $alumnomasr)
+    public function destroy($id)
     {
-        //
+        $empleado=alumnomasr::findOrfail($id);
+        if(Storage::delete('public/'.$empleado->Foto)){
+         alumnomasr::destroy($id);
+        }
+        return redirect('actividades')->with('mensaje','Noticia eliminada con exito');
     }
 }

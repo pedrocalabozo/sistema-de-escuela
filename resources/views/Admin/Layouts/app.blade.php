@@ -68,6 +68,12 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
                                 NUEVO ALUMNO
                             </a>
+
+                            <a class="nav-link" href="{{ url('categorias') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-headset"></i></div>
+                                CATEGORIAS
+                            </a>
+
                             <a class="nav-link" href="">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-headset"></i></div>
                                 MANUAL

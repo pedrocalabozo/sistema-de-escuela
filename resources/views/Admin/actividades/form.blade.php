@@ -29,7 +29,7 @@
 <textarea class="form-control" name="Contenido" id="" cols="30" rows="10">
 
 
- {{isset($actividades->Contenido)?$actividades->Contenido:old('Comtenido')}}
+ {{isset($actividades->Contenido)?$actividades->Contenido:old('Contenido')}}
 
 
 </textarea>
@@ -48,8 +48,34 @@
 
 </select>
 
-<label for="Categoria" class="form-label">Categoria</label>
-<input name="categoria" class="form-control" value="{{isset($actividades->categoria)?$actividades->categoria:old('categoria')}}" type="text">
+
+
+
+
+<label for="Grado" class="form-label">Categorias</label>
+<div class="row">
+<div class="col">
+
+<select  class="form-control" name="categoria_id" id="">
+@if (isset($actividades->categorias->categoria))
+<option value="{{ $actividades->categoria_id}}">{{isset($actividades->categorias->categoria)?$actividades->categorias->categoria:old('categoria')}}</option>
+@endif
+@foreach ($categorias as $categoria)
+<option value="{{ $categoria->id}}">{{ $categoria->categoria }}</option> 
+@endforeach
+
+</select>
+
+
+</div><div class="col">
+<a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+
+
+
+
 
 
 <label for="Autor" class="form-label">Autor</label>

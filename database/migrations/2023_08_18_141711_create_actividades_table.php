@@ -16,13 +16,21 @@ return new class extends Migration
 
 
             $table->string('Titulo',300);
-            $table->string('Contenido',950);
-            $table->string('categoria',30);
+            $table->string('Contenido',3000);
+            //$table->string('categoria',30);
             $table->string('Grado',20);
             $table->string('Foto',100);
             $table->string('Autor',50);
             $table->timestamps();
+        
+          
 
+
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')
+                ->references('id')
+                ->on('categorias')
+                ->onDelete('cascade');
         });
     }
 

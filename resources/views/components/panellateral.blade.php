@@ -34,35 +34,16 @@
    
    
    
-   
+
       <div class="widget widget_collections">
       <div class="widget_content">
           <ul class="list">
           
+          @foreach ($categorias as $lista)
           <li class="accessories firstItem">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/accessories" title="Accessories">Accessories</a>
+            <a href="https://tm-shopify033-tools.myshopify.com/collections/accessories" title="Accessories">{{ $lista->categoria }}</a>
           </li>
-          
-          <li class="garden-tools">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/garden-tools" title="Garden tools">Garden tools</a>
-          </li>
-          
-          <li class="hand-tools">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/hand-tools" title="Hand tools">Hand tools</a>
-          </li>
-          
-          <li class="power-tools">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/power-tools" title="Power tools">Power tools</a>
-          </li>
-          
-          <li class="safety-security">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/safety-security" title="Safety &amp; security">Safety &amp; security</a>
-          </li>
-          
-          <li class="specials lastItem">
-            <a href="https://tm-shopify033-tools.myshopify.com/collections/specials" title="Specials">Specials</a>
-          </li>
-          
+          @endforeach
           </ul>
       </div>
    </div>

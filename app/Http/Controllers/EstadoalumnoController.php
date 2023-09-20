@@ -12,7 +12,8 @@ class EstadoalumnoController extends Controller
 
 public function index($id){
 
-$alumno=alumnomasr::findOrfail($id);
+
+ $alumno=alumnomasr::findOrfail($id);
 $datos=alumnomasr::findOrfail($id);
 
 //ydd($['Puntos']);

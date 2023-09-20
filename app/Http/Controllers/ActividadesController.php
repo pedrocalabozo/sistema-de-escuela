@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\actividades;
 use App\Models\alumnomasr;
+use App\Models\categorias;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,7 +26,8 @@ class ActividadesController extends Controller
     public function create()
     {
         //
-        return view('admin.actividades.create');
+       
+        return view('admin.actividades.create',['categorias'=> categorias::all()]);
     }
 
     /**
@@ -37,10 +39,10 @@ class ActividadesController extends Controller
 
 $campos=[
     'Titulo'=>'required|string|max:300',
-    'Contenido'=>'required|string|max:950',
+    'Contenido'=>'required|string|max:3000',
     'Grado'=>'required|string|max:100',
+    'categoria_id'=>'required|max:3',
     'Autor'=>'required|string|max:100',
-    'categoria'=>'required',
     'Foto'=>'required|max:10000|mimes:jpeg,png,jpg'
     
     
@@ -67,7 +69,7 @@ $campos=[
             //retornamos un formato json 
            // $datos['empleados']=Empleado::paginate(5);
             //return view('empleado.index',$datos);
-  return redirect('actividades')->with('mensaje','Empleado registrado con exito');
+  return redirect('actividades')->with('mensaje','Actividad registrado con exito');
     }
 
     /**
@@ -84,7 +86,7 @@ $campos=[
     public function edit($id)
     {
         $actividades=actividades::findOrfail($id);
-        return view('admin.actividades.edit',compact('actividades'));
+        return view('admin.actividades.edit',['actividades'=>$actividades,'categorias'=> categorias::all()]);
     }
 
     /**
@@ -94,11 +96,11 @@ $campos=[
     {
        
         $campos=[
-            'Titulo'=>'required|string|max:100',
-            'Contenido'=>'required|string|max:100',
-            'Grado'=>'required|string|max:100',
+            'Titulo'=>'required|string|max:300',
+            'Contenido'=>'required|string|max:3000',
+            'Grado'=>'required|string|max:10',
+            'categoria_id'=>'required|max:3',
             'Autor'=>'required|string|max:100',
-            'categoria'=>'required',
             'Foto'=>'required|max:10000|mimes:jpeg,png,jpg'
             
             

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\AlumnomasrController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\Comun;
 use App\Http\Controllers\EstadoalumnoController;
 use App\Models\Alumnomasr;
@@ -36,7 +37,12 @@ Route::middleware(['auth'])->group(function () {
 Route::resource('/actividades',ActividadesController::class);
 
 Route::get('/aplicar/{id}',[EstadoalumnoController::class,'index']);
+
+// Route::get('/alumnos',[AlumnomasrController::class,'index']);
 Route::resource('/alumnos',AlumnomasrController::class);
+
+Route::resource('/categorias',CategoriasController::class);
+
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
