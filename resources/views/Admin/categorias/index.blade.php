@@ -106,7 +106,7 @@ $(document).ready( function () {
 </script>
 
 @endsection
-  <!--  {!! $categorias->links() !!} -->
+  
 </div>
 
 

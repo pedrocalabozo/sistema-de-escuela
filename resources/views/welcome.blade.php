@@ -20,7 +20,6 @@
 
 <h2 class="page_heading">Featured Products</h2>
 
- 
 
 <div class="product-listing__index">
    

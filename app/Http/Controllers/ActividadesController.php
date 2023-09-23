@@ -17,7 +17,8 @@ class ActividadesController extends Controller
     {
         $datos['activo']=alumnomasr::find(1);
         $datos['actividades']=actividades::paginate(10);
-        return view('Admin.actividades.index',$datos);
+        // return response($datos,200,[]);
+         return view('Admin.actividades.index',$datos);
     }
 
     /**

@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
         <link rel="stylesheet" href="{{ asset('asset/comun/style.css') }}" />
-        <link rel="stylesheet" href="{{ asset('asset/comun/responsive.css') }}" />
+        <link rel="stylesheet" href="{{ asset('asset/comun/responsive.css') }}" /> 
 
         @yield('css')
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
 <div class="pseudoStickyBlock" style="position: relative; display: block; height: 0px;"></div>
 <!-- MAIN CONTENT -->
 <div id="main" role="main">
-<div class="container">
+<div class="">
 @yield('conten')
 <!-- FOOTER -->
 @include('comun.includes.footer')

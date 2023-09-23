@@ -19,10 +19,10 @@
    
 
    
-   <H5 class="page_heading">EL ALUMNO MAS RESALTANTE DE LA SEMANA</H5>
+   <H5>EL ALUMNO MAS RESALTANTE <br>DE LA SEMANA</H5>
    <a href="https://tm-shopify033-tools.myshopify.com/collections/accessories" class="" style="">
    
-   <img src="http://localhost/proyectoescuelafeo/public/storage/{{ $alumno['Foto'] }}" title="#htmlcaption-11" style="width: 230px;">
+   <img src="{{asset('storage').'/'.$alumno['Foto'] }}" title="#htmlcaption-11" style="width: 100%;">
 <h4>{{ $alumno['Nombre'] }} {{ $alumno['Apellido'] }} {{ $alumno['Grado'] }} Grado</h4>   
 </a>
    
@@ -31,11 +31,19 @@
      
       
       </div>
-   
-   
+   <style>
+
+@media (max-width: 767px){
+#categorias{
+   display: none;
+
+}
+}
+   </style>
+     
    
 
-      <div class="widget widget_collections">
+      <div id="categorias" class="widget widget_collections">
       <div class="widget_content">
           <ul class="list">
           
@@ -48,8 +56,12 @@
       </div>
    </div>
       
-   
-   
+   <select class="form-control" name="" id="">
+   @foreach ($categorias as $lista)
+   <option value="">{{ $lista->categoria }}</option>
+ 
+   @endforeach
+   </select>
    </div>
    </div>
 </div>

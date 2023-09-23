@@ -56,14 +56,13 @@
 <div class="row">
 <div class="col">
 
-<select  class="form-control" name="categoria_id" id="">
+<select  class="form-control" name="categoria_id" id="select-category">
 @if (isset($actividades->categorias->categoria))
 <option value="{{ $actividades->categoria_id}}">{{isset($actividades->categorias->categoria)?$actividades->categorias->categoria:old('categoria')}}</option>
 @endif
 @foreach ($categorias as $categoria)
 <option value="{{ $categoria->id}}">{{ $categoria->categoria }}</option> 
 @endforeach
-
 </select>
 
 

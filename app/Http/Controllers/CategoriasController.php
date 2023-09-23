@@ -12,7 +12,7 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-     $categorias=categorias::paginate(5);
+     $categorias=categorias::all();
      return view('Admin.categorias.index',['categorias'=>$categorias]);
     }
 
@@ -44,12 +44,14 @@ $campos=[
     
 
     categorias::insert( $datosAlumno);
+    $categorias=categorias::all();
 
+$alert=['alert'=>'success',
+         'categorias'=>$categorias];
 
+   return response($alert,200);
 
-   
-
-  return redirect('categorias')->with('mensaje','Categoria registrado con exito');
+//   return redirect('categorias')->with('mensaje','Categoria registrado con exito');
     
   
     }

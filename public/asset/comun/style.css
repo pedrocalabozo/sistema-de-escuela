@@ -265,8 +265,8 @@ body {
     margin: 0
 }
 #header {
-    padding-bottom: 25px;
-    background: #f72323
+    /* padding-bottom: 25px; */
+    background: #05c037
 }
 #logo {
     padding: 14px 0 0
